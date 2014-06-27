@@ -25,8 +25,10 @@ EmberCLISimpleAuthCookieStore.prototype.included = function included(app) {
   this.app = app;
 
   this.app.import('vendor/ember-simple-auth/simple-auth-cookie-store.amd.js', {
-    'simple-auth-cookie-store/stores/cookie': ['default'],
-    'simple-auth-cookie-store/initializer':   ['default']
+    exports: {
+      'simple-auth-cookie-store/stores/cookie': ['default'],
+      'simple-auth-cookie-store/initializer':   ['default']
+    }
   });
 };
 

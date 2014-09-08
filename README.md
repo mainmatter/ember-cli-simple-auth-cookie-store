@@ -6,7 +6,7 @@ extension library packaged as an
 
 ## Installation
 
-**Ember Simple Auth OAuth 2.0 requires at least Ember CLI 0.0.42.**
+**Ember Simple Auth Cookie Store requires at least Ember CLI 0.0.42.**
 
 To install simply run
 

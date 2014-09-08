@@ -1,35 +1,14 @@
-var path = require('path');
-var fs   = require('fs');
+module.exports = {
+  name: 'Ember CLI Simple Auth Cookie Store',
 
-function EmberCLISimpleAuthCookieStore(project) {
-  this.project = project;
-  this.name    = 'Ember CLI Simple Auth Cookie Store';
-}
+  included: function(app) {
+    this._super.included(app);
 
-function unwatchedTree(dir) {
-  return {
-    read:    function() { return dir; },
-    cleanup: function() { }
-  };
-}
-
-EmberCLISimpleAuthCookieStore.prototype.treeFor = function included(name) {
-  var treePath = path.join('node_modules/ember-cli-simple-auth-cookie-store', name + '-addon');
-
-  if (fs.existsSync(treePath)) {
-    return unwatchedTree(treePath);
+    this.app.import(app.bowerDirectory + 'vendor/ember-simple-auth/simple-auth-cookie-store.amd.js', {
+      exports: {
+        'simple-auth-cookie-store/stores/cookie': ['default'],
+        'simple-auth-cookie-store/initializer':   ['default']
+      }
+    });
   }
-};
-
-EmberCLISimpleAuthCookieStore.prototype.included = function included(app) {
-  this.app = app;
-
-  this.app.import('vendor/ember-simple-auth/simple-auth-cookie-store.amd.js', {
-    exports: {
-      'simple-auth-cookie-store/stores/cookie': ['default'],
-      'simple-auth-cookie-store/initializer':   ['default']
-    }
-  });
-};
-
-module.exports = EmberCLISimpleAuthCookieStore;
+}

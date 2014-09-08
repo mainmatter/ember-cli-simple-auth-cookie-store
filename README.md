@@ -12,6 +12,7 @@ To install simply run
 
 ```
 npm install --save-dev ember-cli-simple-auth-cookie-store
+ember generate ember-cli-simple-auth-cookie-store
 ```
 
 in your Ember CLI project's root.

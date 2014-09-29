@@ -7,7 +7,7 @@ module.exports = {
     this.app.import(app.bowerDirectory + '/ember-simple-auth/simple-auth-cookie-store.amd.js', {
       exports: {
         'simple-auth-cookie-store/stores/cookie': ['default'],
-        'simple-auth-cookie-store/initializer':   ['default']
+        'simple-auth-cookie-store/configuration': ['default']
       }
     });
   }

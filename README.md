@@ -11,6 +11,14 @@ extension library packaged as an
 To install simply run
 
 ```
+ember install:addon ember-cli-simple-auth-cookie-store
+```
+
+in your Ember CLI project's root.
+
+If you're using Ember CLI 0.1.4 or older, run
+
+```
 npm install --save-dev ember-cli-simple-auth-cookie-store
 ember generate ember-cli-simple-auth-cookie-store
 ```
